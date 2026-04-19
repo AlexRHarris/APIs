@@ -5,11 +5,11 @@ app, rt = fast_app(
     hdrs=(
         Meta(charset="UTF-8"),
         Meta(name="viewport", content="width=device-width, initial-scale=1.0"),
-        Meta(name="description", content="Phoenix IT Services | Managed IT Support, Cybersecurity & Cloud Solutions for Phoenix, AZ businesses. Fast response, local experts. Get a free quote today."),
-        Meta(name="keywords", content="IT services Phoenix, managed IT Phoenix AZ, IT support Phoenix, cybersecurity Phoenix, cloud solutions Phoenix, IT company Scottsdale, IT help desk Phoenix"),
+        Meta(name="description", content="Phoenix IT Services | Managed IT, AI Workflow Automation, UniFi Cameras & Cybersecurity. ChatGPT integration, Ubiquiti installations. Local Phoenix experts, 24/7 support."),
+        Meta(name="keywords", content="IT services Phoenix, managed IT Phoenix AZ, AI workflow automation Phoenix, ChatGPT integration business, UniFi installation Phoenix, Ubiquiti Phoenix, cybersecurity, cloud solutions, IT support, camera systems, business automation"),
         Meta(name="robots", content="index, follow"),
-        Meta(property="og:title", content="Phoenix IT Services | #1 Managed IT Support in Phoenix AZ"),
-        Meta(property="og:description", content="Local Phoenix IT experts delivering managed IT, cybersecurity, cloud, and helpdesk services. 24/7 support, fast response times."),
+        Meta(property="og:title", content="Phoenix IT Services | AI Automation + IT Support | #1 in Phoenix"),
+        Meta(property="og:description", content="Phoenix IT Pros: Managed IT, AI workflow automation (ChatGPT/Claude), UniFi cameras, cybersecurity. Local experts. 24/7 support, fast response times."),
         Meta(property="og:type", content="website"),
         Meta(name="geo.region", content="US-AZ"),
         Meta(name="geo.placename", content="Phoenix, Arizona"),
@@ -19,7 +19,7 @@ app, rt = fast_app(
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Phoenix IT Pros",
-  "description": "Managed IT services, cybersecurity, cloud solutions, and 24/7 helpdesk support for Phoenix area businesses.",
+  "description": "Managed IT services, AI workflow automation (ChatGPT/Claude integration), UniFi camera systems, cybersecurity, cloud solutions, and 24/7 helpdesk support for Phoenix area businesses.",
   "url": "https://phoenixitpros.com",
   "telephone": "+1-602-555-0199",
   "address": {
@@ -38,6 +38,7 @@ app, rt = fast_app(
   "areaServed": ["Phoenix", "Scottsdale", "Tempe", "Mesa", "Chandler", "Gilbert", "Glendale"],
   "openingHours": "Mo-Fr 08:00-18:00",
   "priceRange": "$$",
+  "knowsAbout": ["Managed IT", "AI Workflow Automation", "ChatGPT Integration", "UniFi", "Ubiquiti", "Cybersecurity", "Cloud Solutions", "Microsoft 365", "Backup and Disaster Recovery"],
   "sameAs": []
 }
         '''),
@@ -144,6 +145,23 @@ app, rt = fast_app(
             .service-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
             .service-card p { color: var(--gray-mid); font-size: 0.95rem; }
 
+            /* AI WORKFLOWS */
+            .ai-bg { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+            .workflows-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+            .workflow-item {
+                background: var(--white);
+                border-left: 4px solid var(--blue);
+                border-radius: 8px;
+                padding: 1.5rem;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+            .workflow-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--blue); }
+            .workflow-item p { color: var(--gray-mid); font-size: 0.95rem; line-height: 1.6; }
+
             /* WHY US */
             .why-bg { background: var(--gray-light); }
             .why-grid {
@@ -242,7 +260,9 @@ app, rt = fast_app(
 
 SERVICES = [
     ("🖥️", "Managed IT Services", "Flat-rate, all-inclusive IT management so you can focus on your business — not your tech."),
+    ("🤖", "AI Workflow Automation", "Custom ChatGPT, Claude & AI integrations to automate customer service, document processing, and business operations."),
     ("🔒", "Cybersecurity", "Endpoint protection, threat monitoring, and compliance for Phoenix-area businesses."),
+    ("📹", "Camera & Security Systems", "Ubiquiti UniFi camera installations, network video systems, and 24/7 monitoring for Phoenix businesses."),
     ("☁️", "Cloud Solutions", "Microsoft 365, Azure, and hybrid cloud migrations tailored to your needs."),
     ("📞", "24/7 Help Desk", "Local Phoenix technicians answering calls fast — average response under 15 minutes."),
     ("🔗", "Network & Infrastructure", "Structured cabling, firewalls, VPNs, and wireless for offices across the Valley."),
@@ -251,10 +271,19 @@ SERVICES = [
 
 AREAS = ["Phoenix", "Scottsdale", "Tempe", "Mesa", "Chandler", "Gilbert", "Glendale", "Peoria", "Surprise", "Goodyear", "Avondale", "Fountain Hills"]
 
+AI_WORKFLOWS = [
+    ("📧 Customer Support Automation", "ChatGPT-powered email triage — automatically categorize, prioritize, and draft responses to common customer inquiries. Saves 20+ hours/week for Phoenix law firms and service companies."),
+    ("📄 Document Processing", "AI-powered invoice scanning, contract review, and data extraction. Custom Claude integrations for your specific document types and workflows."),
+    ("🎯 Lead Qualification", "Automated lead scoring using your CRM data. AI chatbots pre-qualify incoming leads, freeing your sales team to close deals faster."),
+    ("📊 Business Intelligence Dashboards", "Transform raw data into actionable insights. Custom AI analysis of your operations, customer behavior, and market trends — real-time dashboards for decision-making."),
+    ("⏰ Task & Workflow Automation", "Zapier + AI integrations. Automate repetitive tasks across your tools — Slack notifications, database updates, scheduled reports, all driven by intelligent logic."),
+]
+
 TESTIMONIALS = [
     ("★★★★★", "Switching to Phoenix IT Pros was the best decision we made. Response time is incredible and they actually fix issues the first time.", "Maria S., Office Manager — Scottsdale Law Firm"),
     ("★★★★★", "We had a ransomware scare and their team contained it within the hour. Can't imagine handling IT security without them.", "James R., CEO — Mesa Manufacturing Co."),
     ("★★★★★", "Finally an IT company that speaks plain English. They migrated us to Microsoft 365 with zero downtime.", "Linda K., Director — Chandler Non-Profit"),
+    ("★★★★★", "Their AI workflow automation saved us 25 hours a week on customer service emails. Implemented in 2 weeks. Worth every penny.", "David T., VP Operations — Tempe Consulting Firm"),
 ]
 
 def nav():
@@ -310,6 +339,31 @@ def services_section():
             cls="container",
         ),
         id="services",
+    )
+
+def ai_workflows_section():
+    workflows = [
+        Div(
+            H3(title),
+            P(desc),
+            cls="workflow-item",
+        )
+        for title, desc in AI_WORKFLOWS
+    ]
+    return Section(
+        Div(
+            P("Emerging Technology", cls="section-label"),
+            H2("AI Workflow Automation for Phoenix Businesses", cls="section-title"),
+            P("Tired of repetitive tasks? We integrate ChatGPT, Claude, and custom AI into your business workflows — automating customer service, document processing, lead qualification, and more. Save time. Scale faster. Lower costs.", cls="section-sub"),
+            Div(*workflows, cls="workflows-grid"),
+            Div(
+                A("Schedule AI Consultation", href="#contact", cls="btn-primary"),
+                style="text-align:center; margin-top:2rem;",
+            ),
+            cls="container",
+        ),
+        cls="ai-bg",
+        id="ai-workflows",
     )
 
 def why_section():
@@ -473,6 +527,7 @@ def get():
             hero(),
             trust_bar(),
             services_section(),
+            ai_workflows_section(),
             why_section(),
             testimonials_section(),
             areas_section(),
@@ -497,6 +552,109 @@ async def post(req):
                 Div(contact_section(success=True), style="padding:2rem 0"),
                 style="background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 100%); min-height:60vh; display:flex; align-items:center;",
             ),
+            footer_section(),
+        ),
+        lang="en",
+    )
+
+@rt("/ubiquiti")
+def ubiquiti_landing():
+    return Html(
+        Head(
+            Title("UniFi & Ubiquiti Camera Installation Phoenix | Phoenix IT Pros"),
+            Meta(name="description", content="Professional Ubiquiti UniFi camera system installation, setup, and monitoring for Phoenix businesses. Local experts, fast deployment."),
+        ),
+        Body(
+            nav(),
+            Section(
+                Div(
+                    H1(Span("Ubiquiti UniFi", style="color:var(--orange)"), " Camera Systems for Phoenix Businesses", style="margin-bottom:1rem"),
+                    P("Professional installation, configuration, and 24/7 monitoring of UniFi security systems across the Phoenix metro area.", style="font-size:1.1rem; color:var(--gray-mid); max-width:700px; margin-bottom:2rem;"),
+                    Ul(
+                        Li("✅ Full UniFi NVR & camera system design & installation"),
+                        Li("✅ Integration with your network infrastructure"),
+                        Li("✅ Mobile app setup for remote monitoring"),
+                        Li("✅ 24/7 monitoring & alerts"),
+                        Li("✅ Maintenance & firmware updates"),
+                        style="list-style:none; font-size:1rem; line-height:2; color:var(--gray-dark); max-width:600px;",
+                    ),
+                    A("Get a Free Camera System Quote", href="#contact", cls="btn-primary", style="margin-top:2rem; display:inline-block;"),
+                    cls="container",
+                ),
+                style="background:var(--gray-light); padding:4rem 2rem;",
+            ),
+            Section(
+                Div(
+                    H2("Why UniFi?", cls="section-title"),
+                    Ul(
+                        Li("Enterprise-grade security at competitive pricing"),
+                        Li("Scalable from 1 to 100+ cameras"),
+                        Li("Cloud & local storage options"),
+                        Li("Professional management tools"),
+                        style="list-style-position:inside; color:var(--gray-mid); line-height:2; max-width:500px;",
+                    ),
+                    cls="container",
+                ),
+                style="padding:3rem 2rem;",
+            ),
+            contact_section(),
+            footer_section(),
+        ),
+        lang="en",
+    )
+
+@rt("/ai-workflows")
+def ai_workflows_landing():
+    return Html(
+        Head(
+            Title("AI Workflow Automation for Phoenix Businesses | ChatGPT Integration"),
+            Meta(name="description", content="Custom AI workflow automation for Phoenix businesses. ChatGPT, Claude integration for customer service, document processing, and business automation."),
+        ),
+        Body(
+            nav(),
+            Section(
+                Div(
+                    H1(Span("AI Workflow", style="color:var(--orange)"), " Automation for Your Business", style="margin-bottom:1rem"),
+                    P("Stop wasting time on repetitive tasks. We integrate ChatGPT, Claude, and custom AI into your business — automating customer service, document processing, lead qualification, and more.", style="font-size:1.1rem; color:var(--gray-mid); max-width:700px; margin-bottom:2rem;"),
+                    A("Schedule Free AI Consultation", href="#contact", cls="btn-primary", style="display:inline-block;"),
+                    cls="container",
+                ),
+                style="background:linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); color:#fff; padding:4rem 2rem;",
+            ),
+            Section(
+                Div(
+                    H2("AI Workflow Examples", cls="section-title", style="margin-bottom:2rem;"),
+                    Div(
+                        *[
+                            Div(
+                                H3(title, style="color:var(--blue); margin-bottom:0.5rem;"),
+                                P(desc),
+                                cls="workflow-item",
+                            )
+                            for title, desc in AI_WORKFLOWS
+                        ],
+                        cls="workflows-grid",
+                    ),
+                    cls="container",
+                ),
+                style="padding:4rem 2rem;",
+            ),
+            Section(
+                Div(
+                    H2("The ROI is Real", cls="section-title"),
+                    Ul(
+                        Li("⏱️ Save 10-30 hours per week on manual work"),
+                        Li("💰 Reduce customer service costs by 40%"),
+                        Li("📈 Respond to customer inquiries 10x faster"),
+                        Li("🎯 Qualify leads automatically 24/7"),
+                        Li("📊 Extract insights from unstructured data"),
+                        style="list-style:none; max-width:600px; font-size:1.05rem; line-height:2.2; color:var(--gray-dark);",
+                    ),
+                    cls="container",
+                ),
+                style="background:var(--gray-light); padding:3rem 2rem;",
+            ),
+            contact_section(),
             footer_section(),
         ),
         lang="en",
